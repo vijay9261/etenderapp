@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>E-Tender</title>	
+
+		<meta name="keywords" content="" />
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+		<!-- Web Fonts  -->
+		<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/animate/animate.compat.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/simple-line-icons/css/simple-line-icons.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.theme.default.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{% static 'css/theme.css' %}">
+		<link rel="stylesheet" href="{% static 'css/theme-elements.css' %}">
+		<link rel="stylesheet" href="{% static 'css/theme-blog.css' %}">
+		<link rel="stylesheet" href="{% static 'css/theme-shop.css' %}">
+
+		<!-- Skin CSS -->
+		<link id="skinCSS" rel="stylesheet" href="{% static 'css/skins/skin-corporate-3.css' %}">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+		<!-- Head Libs -->
+		<script src="{% static 'vendor/modernizr/modernizr.min.js' %}"></script>
+
+	</head>
+	<body data-plugin-page-transition>
+		<div class="body">
+			{% include 'header.html' %}
+			<div role="main" class="main">
+				<section class="page-header page-header-classic page-header-sm">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 order-2 order-md-1 align-self-center p-static">
+								<h1 data-title-border>Company Register</h1>
+							</div>
+							<div class="col-md-4 order-1 order-md-2 align-self-center">
+								<ul class="breadcrumb d-block text-md-end">
+									<li><a href="#">Home</a></li>
+									<li class="active text-white"> Company Register </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<div class="container pb-1">
+
+					<div class="row pt-4 justify-content-center" style="min-height:350px;">
+                        <div class="col-md-6 col-md-offset-3">
+                            <h2><strong>Company Register</strong></h2>
+                            <hr/>
+                            {% if msg %}
+                            <div class="alert alert-info" >
+                                <h5>{{msg}}</h4>
+                            </div>
+                            {% endif %}
+                            <form method="post" action="">
+                                {% csrf_token %}
+                                <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        {{form.name}}
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Mobile</label>
+                                        {{form.mobile}}
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        {{form.email}}
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Company Name</label>
+                                            {{form.company_name}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Company Phone</label>
+                                            {{form.company_phone}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Company Address</label>
+                                            {{form.company_address}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>User Name</label>
+                                            {{form.username}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            {{form.password}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input value="Register" type="submit" class="btn btn-primary btn-lg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			{% include 'footer.html' %}
+		</div>
+
+		<!-- Vendor -->
+		<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.appear/jquery.appear.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.cookie/jquery.cookie.min.js' %}"></script>
+		<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.validation/jquery.validate.min.js' %}"></script>
+		<script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="{% static 'js/theme.js' %}"></script>
+
+		<!-- Theme Custom -->
+		<script src="{% static 'js/custom.js' %}"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="{% static 'js/theme.init.js' %}"></script>
+
+	</body>
+</html>
